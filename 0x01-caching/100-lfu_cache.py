@@ -2,7 +2,6 @@
 """ LFU Caching module
 """
 from base_caching import BaseCaching
-from collections import OrderedDict
 
 
 class LFUCache(BaseCaching):
@@ -40,6 +39,7 @@ class LFUCache(BaseCaching):
         return self.cache_data.get(key)
 
     def findLFU(self):
+        """finds the least frequently used key in our cache system"""
         items = list(self.used.items())
         freq = [item[1] for item in items]
         least = min(freq)
