@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import csv
 import math
 from typing import List
@@ -23,6 +24,9 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+        get page with specified pagination
+        """
         assert type(page) is int
         assert page > 0
         assert type(page_size) is int

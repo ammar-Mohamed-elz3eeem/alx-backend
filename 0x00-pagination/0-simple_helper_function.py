@@ -1,4 +1,4 @@
-#!
+#!/usr/bin/env python3
 """ Helper function to get pagination
 """
 
