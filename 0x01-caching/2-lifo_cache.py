@@ -6,9 +6,9 @@ from base_caching import BaseCaching
 
 class LIFOCache(BaseCaching):
     """ LIFOCache class """
-    
+
     LAST_INSERTED_KEYS = []
-    
+
     def put(self, key: str, item: str) -> None:
         """put into cache using first in first out alogorithm"""
         if not key or not item:
