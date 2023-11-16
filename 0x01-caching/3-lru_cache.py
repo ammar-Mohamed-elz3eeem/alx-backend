@@ -21,9 +21,9 @@ class LRUCache(BaseCaching):
         self.cache_data[key] = item
 
         if len(self.cache_data) > BaseCaching.MAX_ITEMS:
-            item = next(iter(self.order))
-            del self.cache_data[item]
-            print(f"DISCARD: {item}")
+            item_to_remove = next(iter(self.order))
+            del self.cache_data[item_to_remove]
+            print(f"DISCARD: {item_to_remove}")
 
         if len(self.order) > BaseCaching.MAX_ITEMS:
             self.order.popitem(False)
@@ -32,4 +32,5 @@ class LRUCache(BaseCaching):
         """gets by key sepecifiec item from cache data"""
         if not key or key not in self.cache_data:
             return None
+        self.order.move_to_end(key)
         return self.cache_data.get(key)
