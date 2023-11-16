@@ -3,9 +3,10 @@
 """
 from base_caching import BaseCaching
 
+
 class BasicCache(BaseCaching):
     """BasicCache claass with no limits"""
-    
+
     def put(self, key: str, item: str) -> None:
         """inserts new item on cache data"""
         if not key or not item:
