@@ -37,6 +37,7 @@ class Server:
         return data[tup[0]:tup[1]]
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
+        """Set hypermedia links on request"""
         data = self.dataset()
         total_pages = math.ceil(len(data) / page_size)
         return {
